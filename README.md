@@ -38,3 +38,22 @@ workflow/
 ---
 
 **使用说明**：每天分析完成后按日期存入，赛后自动追加复盘并迭代权重。
+
+## CAT CORE FINAL BASE 4.0（当前正式入口）
+
+当前正式规则基线为 **CAT CORE FINAL BASE 4.0**。旧版CAT-X、CAT-V22及CAT CORE FINAL 2.x/3.x文档继续作为历史资料保留，不自动代表现行规则。
+
+- [BASE 4.0正式主规则](workflow/CAT_CORE_FINAL_BASE_4.0.md)
+- [统一比赛记录字段规范 v4.0](database/CAT_CORE_FINAL_MATCH_SCHEMA_v4.0.md)
+- [实验模块登记与验证治理](workflow/EXPERIMENTAL_MODULES.md)
+- [历史资料迁移登记](database/MIGRATION_REGISTER.md)
+
+### 当前治理要点
+- 胜平负方向准确性为首要优化目标；比分、进球数、半全场分别独立判断。
+- Goal Structure Engine 3.0先判断主客进球结构，再生成比分簇。
+- 大模型负责最终裁决；市场数据只作辅助异常校验。
+- 新模块采用增量融合：先登记、与稳定基线并行回测，达到预注册门槛后才可晋升。
+- 赛前预测封存，赛后追加实际结果与误差审计；不覆盖历史预测。
+- 未有赛前封存证据的历史记录，不得伪造为赛前预测样本。
+
+旧目录和历史文件继续有效；本节仅新增当前正式入口。
